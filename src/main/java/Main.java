@@ -1,6 +1,6 @@
 public class Main {
     public static void main() {
-        DynamicArray arr = new DynamicArray();
+        LinkedList arr = new LinkedList();
         arr.add(1);
         arr.add(2);
         arr.add(3);
@@ -17,5 +17,7 @@ public class Main {
         for (int i = 0; i < arr.getSize(); i++){
             System.out.print(arr.get(i));
         }
+        System.out.println();
+        System.out.println(arr.get(2));
     }
 }
