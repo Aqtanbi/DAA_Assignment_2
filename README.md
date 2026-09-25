@@ -210,3 +210,98 @@ The results are recorded in `benchmark_results.csv`.
 
 The experiment allows us to compare linear search performance
 in a dynamic array and a singly linked list.
+
+### Insert and Remove
+
+The third performance experiment compares insertion and removal
+operations in `DynamicArray` and `LinkedList`.
+
+**Methodology:**
+- Input sizes: 100, 1,000, 10,000, and 100,000 elements.
+- Five repetitions for each input size.
+- Each repetition uses a freshly initialized data structure.
+- Initial data is generated using `Random(42)`.
+- Data structure initialization is performed before the timed section.
+- Execution time is measured using `System.nanoTime()`.
+- The elapsed time is recorded in nanoseconds.
+
+The following workloads are implemented:
+
+| Workload | Description |
+|---|---|
+| InsertBeginning | Insert an element at index 0. |
+| RemoveBeginning | Remove an element at index 0. |
+| InsertMiddle | Insert an element at the middle index. |
+| RemoveMiddle | Remove an element at the middle index. |
+
+For each workload, the same input data is used to initialize
+both data structures.
+
+The experiment measures the cost of inserting and removing
+elements at different positions and allows us to compare
+the behavior of array-based and linked-list-based structures.
+
+### Priority Processing (MinHeap)
+
+The fourth performance experiment evaluates the performance
+of the custom `MinHeap` implementation.
+
+**Methodology:**
+- Input sizes: 100, 1,000, 10,000, and 100,000 elements.
+- Five repetitions for each input size.
+- Input data is generated using `Random(42)`.
+- Execution time is measured using `System.nanoTime()`.
+- The elapsed time is recorded in nanoseconds.
+
+The following workloads are implemented:
+
+| Workload | Description |
+|---|---|
+| HeapInsert | Insert all input elements into an initially empty MinHeap. |
+| HeapExtractMin | Extract all elements from a previously populated MinHeap. |
+
+For the `HeapInsert` workload, the timer starts before inserting
+the input elements and stops after all insertions are completed.
+
+For the `HeapExtractMin` workload, the heap is populated before
+the timer starts. The timed section measures the extraction
+of all elements using `extractMin()`.
+
+This separation allows insertion and extraction performance
+to be evaluated independently.
+
+### Benchmark Summary
+
+The benchmark suite currently includes the following workloads:
+
+| Data Structure | Workloads |
+|---|---|
+| DynamicArray | RandomAccess, Search, InsertBeginning, RemoveBeginning, InsertMiddle, RemoveMiddle |
+| LinkedList | RandomAccess, Search, InsertBeginning, RemoveBeginning, InsertMiddle, RemoveMiddle |
+| MinHeap | HeapInsert, HeapExtractMin |
+
+Each workload is executed for four input sizes with five
+repetitions per size.
+
+The results are stored in `benchmark_results.csv` and will
+be used for further performance analysis and visualization.
+
+### Performance Analysis
+
+The benchmark results will be analyzed by comparing the
+measured execution times with the theoretical time complexity
+of each operation.
+
+The analysis will include:
+- Comparison of random access performance in `DynamicArray`
+  and `LinkedList`.
+- Comparison of search performance for different input sizes.
+- Evaluation of insertion and removal costs at the beginning
+  and middle of the structures.
+- Analysis of MinHeap insertion and extraction performance.
+
+Graphs will be generated to visualize how execution time
+changes as the input size increases.
+
+The experimental results will be discussed in relation to
+the theoretical complexity of the implemented operations.
