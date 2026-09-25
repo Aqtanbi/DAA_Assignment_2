@@ -79,3 +79,58 @@ When inserting an element, the new node is connected to the appropriate position
 When removing an element, the reference of the previous node is updated to skip the removed node.
 
 The `size` variable is updated after each insertion and removal operation.
+
+
+# Implementation of Min-Heap data structure
+
+In this part of Assignment 2, I implemented a Min-Heap data structure using Java.
+
+The purpose of this implementation is to understand how a binary heap stores elements and maintains the heap property while performing insertion and extraction operations.
+
+The Min-Heap was implemented using a regular integer array without using Java's built-in PriorityQueue or other collection classes.
+
+### Implemented Operations
+
+`insert(int x)` - Inserts a new element into the heap and restores the Min-Heap property.
+
+`peekMin()` - Returns the minimum element without removing it from the heap.
+
+`extractMin()` - Removes and returns the minimum element, then restores the Min-Heap property.
+
+`getSize()` - Returns the number of elements currently stored in the heap.
+
+`isEmpty()` - Checks whether the heap contains any elements.
+
+### Internal Structure
+
+MinHeap uses the following fields and components:
+
+* `data` - An integer array that stores the heap elements.
+* `size` - The number of elements currently stored in the heap.
+* `capacity` - The total number of elements that the internal array can hold.
+
+The heap is represented as a complete binary tree stored in an array.
+
+For an element at index `i`, the indices of its children and parent are calculated using the following formulas:
+
+* Parent: `(i - 1) / 2`
+* Left child: `2 * i + 1`
+* Right child: `2 * i + 2`
+
+The root of the heap is stored at index 0 and contains the minimum element.
+
+### Implementation Details
+
+The implementation maintains the Min-Heap property, which requires every parent element to be less than or equal to its children.
+
+The `insert()` operation adds a new element at the end of the array and uses `siftUp()` to move the element towards the root if necessary.
+
+The `peekMin()` operation returns the root element without modifying the heap.
+
+The `extractMin()` operation removes the root, moves the last element to the root position, and uses `siftDown()` to restore the heap property.
+
+The `swap()` method exchanges two elements in the array.
+
+The `resize()` method doubles the capacity when the internal array becomes full and copies the existing elements into a new array.
+
+

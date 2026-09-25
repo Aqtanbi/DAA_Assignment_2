@@ -1,23 +1,20 @@
 public class Main {
-    public static void main() {
-        LinkedList arr = new LinkedList();
-        arr.add(1);
-        arr.add(2);
-        arr.add(3);
-        arr.add(0, 5);
-        for (int i = 0; i < arr.getSize(); i++){
-            System.out.print(arr.get(i));
+    public static void main(String[] args) {
+
+        MinHeap heap = new MinHeap();
+
+        heap.insert(10);
+        heap.insert(5);
+        heap.insert(20);
+        heap.insert(2);
+        heap.insert(8);
+
+        System.out.println("Minimum: " + heap.peekMin());
+
+        while (!heap.isEmpty()) {
+            System.out.print(heap.extractMin() + " ");
         }
+
         System.out.println();
-        if (arr.contains(3)) {
-            System.out.println("Yes it contains");
-        }
-        arr.remove(0);
-        System.out.println("array with removed first element:");
-        for (int i = 0; i < arr.getSize(); i++){
-            System.out.print(arr.get(i));
-        }
-        System.out.println();
-        System.out.println(arr.get(2));
     }
 }
