@@ -190,3 +190,23 @@ The Random Access experiment is implemented. Additional workloads, including Sea
 `LinkedList` requires traversal from the head to reach an element at a specified index. Therefore, random access is expected to become more expensive as the input size increases.
 
 The measured results will be analyzed and compared with the theoretical time complexity after all benchmark workloads are completed.
+
+### Search
+
+The second benchmark evaluates the `contains(x)` operation
+for DynamicArray and LinkedList.
+
+**Methodology:**
+- Input sizes: 100, 1,000, 10,000, and 100,000.
+- Five repetitions for each input size.
+- 10,000 search queries per repetition.
+- Half of the queries use values selected from the input data.
+- The other half use -1, which is not present in the generated data.
+- The same query values are used for both data structures.
+- Execution time is measured using `System.nanoTime()`.
+- Input data and search queries are generated before timing.
+
+The results are recorded in `benchmark_results.csv`.
+
+The experiment allows us to compare linear search performance
+in a dynamic array and a singly linked list.
