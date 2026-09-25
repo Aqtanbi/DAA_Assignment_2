@@ -134,3 +134,59 @@ The `swap()` method exchanges two elements in the array.
 The `resize()` method doubles the capacity when the internal array becomes full and copies the existing elements into a new array.
 
 
+# Testing
+
+A custom test class (`Tests.java`) was created to verify the correctness of the implemented data structures.
+
+### DynamicArray
+- Tested adding elements at the end and at a specified index.
+- Tested removing elements from the beginning, middle, and end.
+- Tested `get()` and `contains()` operations.
+- Tested empty array behavior, duplicate values, and invalid indices.
+
+### LinkedList
+- Tested adding elements at the end and at a specified index.
+- Tested removing elements from different positions.
+- Tested `get()` and `contains()` operations.
+- Tested empty list behavior, duplicate values, and invalid indices.
+
+### MinHeap
+- Tested insertion of multiple elements, including duplicates.
+- Verified that `peekMin()` returns the minimum element.
+- Verified that repeated `extractMin()` calls return elements in non-decreasing order.
+- Tested empty heap behavior and extraction of a single element.
+
+All implemented tests passed successfully.
+
+# Performance Benchmarking
+
+### Random Access
+
+The first performance experiment compares random access in `DynamicArray` and `LinkedList`.
+
+**Methodology:**
+- Input sizes: 100, 1,000, 10,000, and 100,000 elements.
+- Number of repetitions: 5 for each input size.
+- Random data generated using `Random(42)` for reproducibility.
+- Random indices are generated before the timed section.
+- Execution time is measured using `System.nanoTime()`.
+- Each repetition performs 10,000 calls to `get(index)`.
+- The elapsed time is recorded in nanoseconds.
+
+The structures are initialized and populated before the timer starts, so the experiment measures random access rather than construction time.
+
+### Results
+
+The benchmark results are exported to `benchmark_results.csv`.
+
+The CSV file contains the structure name, workload, input size, repetition number, and measured execution time.
+
+The Random Access experiment is implemented. Additional workloads, including Search, Insert/Remove, and Priority Processing, will be added in subsequent stages.
+
+### Preliminary Discussion
+
+`DynamicArray` provides constant-time indexed access because elements are stored in a contiguous array.
+
+`LinkedList` requires traversal from the head to reach an element at a specified index. Therefore, random access is expected to become more expensive as the input size increases.
+
+The measured results will be analyzed and compared with the theoretical time complexity after all benchmark workloads are completed.

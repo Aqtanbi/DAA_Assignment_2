@@ -41,7 +41,7 @@ public class LinkedList {
         }
         else{
             Node current = head;
-            for (int i = 0; i < index; i++) {
+            for (int i = 0; i < index-1; i++) {
                 current = current.next;
             }
             newNode.next = current.next;
