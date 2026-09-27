@@ -5,7 +5,7 @@
 # Implementation of Dynamic Array data structure:
 
 ## Complexity
-![img.png](Analyzing Results/DAComplexity.png)
+![img.png](Analyzing_Results/DAComplexity.png)
 
 ## Review
 
@@ -39,7 +39,7 @@ DynamicArray uses the following fields:
 # Implementation of Linked List data structure
 
 ## Complexity
-![img.png](Analyzing Results/LLComplexity.png)
+![img.png](Analyzing_Results/LLComplexity.png)
 
 ## Review
 
@@ -95,7 +95,7 @@ The `size` variable is updated after each insertion and removal operation.
 # Implementation of Min-Heap data structure
 
 ## Complexity
-![img.png](Analyzing Results/MHComplexity.png)
+![img.png](Analyzing_Results/MHComplexity.png)
 
 ## Review
 
@@ -340,7 +340,7 @@ The benchmark results are exported to `benchmark_results.csv`.
 
 The CSV file contains the structure name, workload, input size, repetition number, and measured execution time.
 
-![img.png](Analyzing Results/RandomAccessGraphic.png)
+![img.png](Analyzing_Results/RandomAccessGraphic.png)
 
 The graph illustrates the difference in random access performance between the two data structures. While LinkedList execution time increases considerably with input size, DynamicArray maintains relatively stable execution times for larger inputs.
 
@@ -382,7 +382,7 @@ in a dynamic array and a singly linked list.
 
 ### Results
 
-![img.png](Analyzing Results/SearchingGraphic.png)
+![img.png](Analyzing_Results/SearchingGraphic.png)
 
 ### Search Performance Analysis
 
@@ -441,7 +441,7 @@ the behavior of array-based and linked-list-based structures.
 
 
 ### Insert at Beginning
-![img.png](Analyzing Results/Insert at beginning.png)
+![img.png](Analyzing_Results/Insert at beginning.png)
 The graph compares insertion times at the beginning of both data structures.
 LinkedList maintains relatively low execution times as the input size increases,
 DynamicArray generally requires more time because existing elements must be shifted.
@@ -465,7 +465,7 @@ Overall, the benchmark illustrates the difference between the linear insertion c
 constant-time insertion cost of LinkedList at the beginning.
 
 ### Remove at beginning
-![img.png](Analyzing Results/RemoveBeginningGraphic.png)
+![img.png](Analyzing_Results/RemoveBeginningGraphic.png)
 
 The graph compares the average execution time of removing an element from the beginning of `DynamicArray` 
 and `LinkedList` for input sizes of 100, 1,000, 10,000, and 100,000 elements.
@@ -490,7 +490,7 @@ Overall, the benchmark demonstrates the advantage of LinkedList for removing
 elements from the beginning of a collection.
 
 ### Insert Middle
-![img.png](Analyzing Results/InsertMiddleGraph.png)
+![img.png](Analyzing_Results/InsertMiddleGraph.png)
 
 The graph compares the average execution time of inserting an element into the middle of 
 `DynamicArray` and `LinkedList` for input sizes of 100, 1,000, 10,000, and 100,000 elements.
@@ -516,7 +516,7 @@ Overall, the benchmark demonstrates that both data structures require linear tim
 but DynamicArray has lower measured execution time for the largest tested input.
 
 ### Remove Middle
-![img.png](Analyzing Results/RemoveMiddleGraphic.png)
+![img.png](Analyzing_Results/RemoveMiddleGraphic.png)
 
 The graph compares the average execution time of removing an element from the middle of 
 `DynamicArray` and `LinkedList` for input sizes of 100, 1,000, 10,000, and 100,000 elements.
@@ -586,7 +586,7 @@ to be evaluated independently.
 
 ### MinHeap Performance Analysis
 #### Insert Operation
-![img.png](Analyzing Results/HeapInsertGaphic.png)
+![img.png](Analyzing_Results/HeapInsertGaphic.png)
 
 The `MinHeap` insertion operation adds a new element while maintaining the min-heap property. 
 After inserting an element at the end of the heap, the element may need to move upward through 
@@ -612,7 +612,7 @@ Overall, the experimental results support the theoretical analysis: inserting al
 as n increases, while each individual insertion takes at most logarithmic time.
 
 #### Extract Operation
-![img.png](Analyzing Results/HeapExtractGraphic.png)
+![img.png](Analyzing_Results/HeapExtractGraphic.png)
 
 The graph illustrates the average execution time of extracting all elements from a pre-populated 
 MinHeap for input sizes of 100, 1,000, 10,000, and 100,000 elements.
